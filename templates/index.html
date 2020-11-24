@@ -2,47 +2,78 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mission to Mars</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Instruct browser to control the page's dimensions and scaling-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!--Bring in the css style sheet-->
+    <link rel="stylesheet" href="../static/style.css" />
+
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="container text-center">
-            <h1 class="jumbotron">Mission to Mars</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data!</a></p>
+            <div class="jumbotron">
+                <h1>MISSION TO MARS</h1>
+                <p class="button">
+                    <a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape Data!</a>
+                </p>
+            </div>
         </div>
-        <div>
+
+        <div class="container">
             <h2>Lasted Mars News</h2>
-            <h3>{{ mars_data.news_title }}</h3>
+            <hr>
+            <h4>{{ mars_data.news_title }}</h4>
             <p>{{ mars_data.news_p }}</p>
         </div>
-        <div container>
-            <div row>
-                <div col-6>
-                    <h2>Featured Mars Image</h2>
-                    <img src={{ mars_data.img_url }} alt='featured_img' />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="box">
+                        <h2>Featured Mars Image</h2>
+                        <hr>
+                        <img class="img-fluid img-thumbnail" src={{ mars_data.img_url }} alt='featured_img' />
+                    </div>
                 </div>
-                <div col-6>
-                    <h3>Mar Facts</h3>
-                    <table>{{mars_data.facts | safe}}</table>
-                </div>
-            </div>
-        </div>
-        <div container>
-            <div row>
-                <div col-3>{% for img in mars_data.hemisphere %}
-                    <img src={{img.img_url}} />
-                    <p>{{img.title}}</p>
-                    {% endfor %}
+                <div class="col-lg-5 col-md-12">
+                    <div class="box"></div>
+                    <h2>Mars Facts</h2>
+                    <hr>
+                    <p>{{mars_data.facts | safe}}</p>
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <h2 style="text-align: center;">Mars Hemisphere</h2>
+            <hr>
+            <div class="row">
+                {% for img in mars_data.hemisphere %}
+                <div class="col-lg-3 col-sm-6">
+                    <div class="box">
+                        <div style="padding: 10px 10px 10px 10px" class="row">
+                            <img class="img-fluid img-thumbnail" src={{img.img_url}} />
+                        </div>
+                        <div class="row">
+                            <p style="font-size: 17px; font-weight: bold; margin: 5px 20px 20px;">{{img.title}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
     </div>
-    </div>
+
 </body>
 
 </html>

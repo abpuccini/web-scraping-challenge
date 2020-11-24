@@ -27,10 +27,14 @@ def scrape_info():
 
     # Retrieve the latest title
     news_title = soup.select_one('div.content_title a').text
+
+    # Store result in mars_data dictionary
     mars_data['news_title'] = news_title
 
     # Retrieve the latest paragraph
     news_p = soup.select_one('div.article_teaser_body').text
+
+    # Store result in mars_data dictionary
     mars_data['news_p'] = news_p
 
     # Visit JPL Mars Space Images - Featured Image
@@ -72,8 +76,11 @@ def scrape_info():
     mars_df.columns = ['Description', 'Mars']
     mars_df.set_index('Description', inplace=True)
 
-    mars_html = mars_df.to_html()
+    # Extract table to html
+    mars_html = mars_df.to_html(
+        classes="dataframe table table-striped, table-bordered table-hover")
 
+    # Store result in mars_data dictionary
     mars_data['facts'] = mars_html
 
     # Mars Hemispheres
@@ -91,9 +98,13 @@ def scrape_info():
         hem_elem = browser.links.find_by_partial_text(hem)
         hem_elem.click()
 
+        time.sleep(1)
+
         # Find original to download full img
         hem_elem_org = browser.find_by_text("Original", wait_time=1)
         hem_elem_org.click()
+
+        time.sleep(1)
 
         # Scrape the Mars website
         hem_html = browser.html
@@ -109,6 +120,7 @@ def scrape_info():
 
         hemisphere_image_urls.append(hem_dict)
 
+    # Store result in mars_data dictionary
     mars_data['hemisphere'] = hemisphere_image_urls
 
     # Close the browser after scraping
