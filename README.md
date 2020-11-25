@@ -143,7 +143,7 @@ Scraped websites to retrieve all data that is required, and stored in a dictiona
 
 **Code:** [(see completed code click here)](scrape_mars.py)
 
-    ```java
+    ```javascript
     def init_browser():
         # The path to the chromedriver
         executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
@@ -278,7 +278,7 @@ Developed Flask application to render HTML page by using data store in the previ
 
 - Created an Flask application and database connection
         
-    ```java
+    ```javascript
         # Create an instance of Flask
         app = Flask(__name__)
 
@@ -301,7 +301,7 @@ Developed Flask application to render HTML page by using data store in the previ
 
 - Scrape route
 
-    ```java
+    ```javascript
     @app.route("/scrape")
     def scrape():
 
