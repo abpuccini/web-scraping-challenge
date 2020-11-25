@@ -143,7 +143,6 @@ Scraped websites to retrieve all data that is required, and stored in a dictiona
 
 **Code:** [(see completed code click here)](scrape_mars.py)
 
-    ```javascript
         def init_browser():
             # The path to the chromedriver
             executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
@@ -268,7 +267,6 @@ Scraped websites to retrieve all data that is required, and stored in a dictiona
 
             # Return results
             return mars_data
-    ```
 
 ### Flask application
 
@@ -278,17 +276,14 @@ Developed Flask application to render HTML page by using data store in the previ
 
 - Created an Flask application and database connection
         
-    ```javascript
         # Create an instance of Flask
         app = Flask(__name__)
 
         # Use PyMongo to establish Mongo connection
         mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_db")
-    ```
 
 - Home route
 
-    ```javascript
     @app.route("/")
     def home():
 
@@ -297,11 +292,9 @@ Developed Flask application to render HTML page by using data store in the previ
 
         # Return template and data
         return render_template("index.html", mars_data=mars_data)
-    ```
 
 - Scrape route
 
-    ```javascript
     @app.route("/scrape")
     def scrape():
 
@@ -313,6 +306,5 @@ Developed Flask application to render HTML page by using data store in the previ
 
         # Redirect back to home page
         return redirect("/")
-    ```
 
 
