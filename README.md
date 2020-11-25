@@ -308,4 +308,6 @@ Developed Flask application to render HTML page by using data store in the previ
             return redirect("/")
 
 ---
-©  [Atcharaporn B Puccini](https://www.linkedin.com/in/abpuccini/)
+© [Atcharaporn B Puccini](https://www.linkedin.com/in/abpuccini/)
+:email: b.atcharaporn@gmail.com
+
