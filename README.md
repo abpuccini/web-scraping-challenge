@@ -280,11 +280,7 @@ Developed Flask application to render HTML page by using data store in the previ
 
 **Code:** [(see completed code click here)](scrape_mars.py)
 
-- Imported dependencies and created connection and database
-
-        from flask import Flask, render_template, redirect
-        from flask_pymongo import PyMongo
-        import scrape_mars
+- Created an Flask application and database connection
 
         # Create an instance of Flask
         app = Flask(__name__)
