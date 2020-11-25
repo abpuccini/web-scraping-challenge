@@ -284,27 +284,27 @@ Developed Flask application to render HTML page by using data store in the previ
 
 - Home route
 
-    @app.route("/")
-    def home():
+        @app.route("/")
+        def home():
 
-        # Find one record of data from the mongo database
-        mars_data = mongo.db.mars_data.find_one()
+            # Find one record of data from the mongo database
+            mars_data = mongo.db.mars_data.find_one()
 
-        # Return template and data
-        return render_template("index.html", mars_data=mars_data)
+            # Return template and data
+            return render_template("index.html", mars_data=mars_data)
 
 - Scrape route
 
-    @app.route("/scrape")
-    def scrape():
+        @app.route("/scrape")
+        def scrape():
 
-        # Run the scrape function
-        mission_data = scrape_mars.scrape_info()
+            # Run the scrape function
+            mission_data = scrape_mars.scrape_info()
 
-        # Update the Mongo database using update and upsert=True
-        mongo.db.mars_data.update({}, mission_data, upsert=True)
+            # Update the Mongo database using update and upsert=True
+            mongo.db.mars_data.update({}, mission_data, upsert=True)
 
-        # Redirect back to home page
-        return redirect("/")
+            # Redirect back to home page
+            return redirect("/")
 
 
