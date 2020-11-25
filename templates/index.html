@@ -18,23 +18,23 @@
 
 <body>
     <div class="container">
-        <div class="container text-center">
+        <section class="container text-center">
             <div class="jumbotron">
                 <h1>MISSION TO MARS</h1>
                 <p class="button">
                     <a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape New Data!</a>
                 </p>
             </div>
-        </div>
+        </section>
 
-        <div class="container">
+        <section class="container">
             <h2>Latest Mars News</h2>
             <hr>
             <h4>{{ mars_data.news_title }}</h4>
             <article style="font-size: medium;">{{ mars_data.news_p }}</article>
-        </div>
+        </section>
 
-        <div class="container">
+        <section class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12">
                     <div class="box">
@@ -50,9 +50,9 @@
                     <p>{{mars_data.facts | safe}}</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="container">
+        <section class="container">
             <h2 style="text-align: center;">Mars Hemispheres</h2>
             <hr>
             <div class="row">
@@ -63,17 +63,14 @@
                             <img class="img-fluid img-thumbnail" src={{img.img_url}} />
                         </div>
                         <div class="row">
-                            <p style="font-size: 17px; font-weight: bold; margin: 5px 20px 20px;">{{img.title}}</p>
+                            <p style="font-size: 16px; font-weight: bold; margin: 5px 20px 20px;">{{img.title}}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-        </div>
-
-
+        </section>
     </div>
-
 </body>
 
 </html>
