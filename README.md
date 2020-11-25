@@ -137,18 +137,13 @@ Retrived Mars hemispheres name and image url, and stored them in the variables.
 
 Developed Flask application to render HTML page based on data stored in a database.
 
-### MongoDB
+### MongoDB 
 
-Scraped websites to retrieve all data that is required, and stored in a dictionary. The dictionary from this step will be used in Flask application.
+Scraped websites to retrieve all data that is required, and stored in a dictionary. The dictionary from this step will be used in Flask application. (This code is similar to code in Jupyter Notebook except time.sleep() and appending list which will use to store in the database in the next step)
 
-**Code:**
+**Code:** [(see completed code click here)](scrape_mars.py)
 
-    from splinter import Browser
-    from bs4 import BeautifulSoup as bs
-    import pandas as pd
-    import time
-
-
+    ```java
     def init_browser():
         # The path to the chromedriver
         executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
@@ -273,45 +268,51 @@ Scraped websites to retrieve all data that is required, and stored in a dictiona
 
         # Return results
         return mars_data
+    ```
 
 ### Flask application
 
 Developed Flask application to render HTML page by using data store in the previous step. There are two step as following.
 
-**Code:** [(see completed code click here)](scrape_mars.py)
+**Code:** [(see completed code click here)](app.py)
 
 - Created an Flask application and database connection
-
+        
+    ```java
         # Create an instance of Flask
         app = Flask(__name__)
 
         # Use PyMongo to establish Mongo connection
         mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_db")
+    ```
 
 - Home route
 
-        @app.route("/")
-        def home():
+    ```javascript
+    @app.route("/")
+    def home():
 
-            # Find one record of data from the mongo database
-            mars_data = mongo.db.mars_data.find_one()
+        # Find one record of data from the mongo database
+        mars_data = mongo.db.mars_data.find_one()
 
-            # Return template and data
-            return render_template("index.html", mars_data=mars_data)
+        # Return template and data
+        return render_template("index.html", mars_data=mars_data)
+    ```
 
 - Scrape route
 
-        @app.route("/scrape")
-        def scrape():
+    ```java
+    @app.route("/scrape")
+    def scrape():
 
-            # Run the scrape function
-            mission_data = scrape_mars.scrape_info()
+        # Run the scrape function
+        mission_data = scrape_mars.scrape_info()
 
-            # Update the Mongo database using update and upsert=True
-            mongo.db.mars_data.update({}, mission_data, upsert=True)
+        # Update the Mongo database using update and upsert=True
+        mongo.db.mars_data.update({}, mission_data, upsert=True)
 
-            # Redirect back to home page
-            return redirect("/")
-
+        # Redirect back to home page
+        return redirect("/")
+    ```
 
 
