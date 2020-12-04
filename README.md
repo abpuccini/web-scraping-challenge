@@ -6,6 +6,8 @@ Building a web application that scrapes various websites for data related to the
 
 [<img align="center" src="https://img.youtube.com/vi/vCzeDowiV4E/maxresdefault.jpg" width="100%">](https://youtu.be/vCzeDowiV4E)
 
+[![Mission to Mars](https://share.gifyoutube.com/vCzeDowiV4E.gif)](https://youtu.be/vCzeDowiV4E)
+
 ## Sources
 
 - [NASA Mars News](https://mars.nasa.gov/news/)
