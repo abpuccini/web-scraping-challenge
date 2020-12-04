@@ -4,7 +4,7 @@ Building a web application that scrapes various websites for data related to the
 
 **Here is the video of how the websites will be scraped**
 
-[<img src="https://img.youtube.com/vi/vCzeDowiV4E/maxresdefault.jpg" width="50%">](https://youtu.be/vCzeDowiV4E)
+[<img align="center" src="https://img.youtube.com/vi/vCzeDowiV4E/maxresdefault.jpg" width="100%">](https://youtu.be/vCzeDowiV4E)
 
 ## Sources
 
