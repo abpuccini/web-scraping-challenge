@@ -4,9 +4,11 @@ Building a web application that scrapes various websites for data related to the
 
 **Here is the video of how the websites will be scraped**
 
+
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/vCzeDowiV4E" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
+
 
 ## Sources
 
