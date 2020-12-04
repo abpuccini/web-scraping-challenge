@@ -2,11 +2,9 @@
 
 Building a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
-**Here is the video of how the websites will be scraped**
+***Here is the video of how the websites will be scraped!***
 
-[<img align="center" src="https://img.youtube.com/vi/vCzeDowiV4E/maxresdefault.jpg" width="100%">](https://youtu.be/vCzeDowiV4E)
-
-[![Mission to Mars](https://share.gifyoutube.com/vCzeDowiV4E.gif)](https://youtu.be/vCzeDowiV4E)
+[<img align="center" src="https://img.youtube.com/vi/vCzeDowiV4E/maxresdefault.jpg" width="75%">](https://youtu.be/vCzeDowiV4E)
 
 ## Sources
 
