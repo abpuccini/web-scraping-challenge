@@ -2,6 +2,12 @@
 
 Building a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
+**Here is the video of how the websites will be scraped**
+
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/vCzeDowiV4E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
 ## Sources
 
 - [NASA Mars News](https://mars.nasa.gov/news/)
