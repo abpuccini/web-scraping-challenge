@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Mission to Mars</title>
+    <!--Instruct browser to control the page's dimensions and scaling-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!--Bring in the css style sheet-->
+    <link rel="stylesheet" href="../static/style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="container text-center">
+            <div class="jumbotron">
+                <h1>MISSION TO MARS</h1>
+                <p class="button">
+                    <a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape New Data!</a>
+                </p>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Latest Mars News</h2>
+            <hr>
+            <h4>{{ mars_data.news_title }}</h4>
+            <article style="font-size: medium;">{{ mars_data.news_p }}</article>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="box">
+                        <h2>Featured Mars Image</h2>
+                        <hr>
+                        <img class="img-fluid img-thumbnail" src={{ mars_data.img_url }} alt='featured_img' />
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="box"></div>
+                    <h2>Mars Facts</h2>
+                    <hr>
+                    <p>{{mars_data.facts | safe}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 style="text-align: center;">Mars Hemispheres</h2>
+            <hr>
+            <div class="row">
+                {% for img in mars_data.hemisphere %}
+                <div class="col-lg-3 col-sm-6">
+                    <div class="box">
+                        <div style="padding: 10px 10px 10px 10px" class="row">
+                            <img class="img-fluid img-thumbnail" src={{img.img_url}} />
+                        </div>
+                        <div class="row">
+                            <p style="font-size: 16px; font-weight: bold; margin: 5px 20px 20px;">{{img.title}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
