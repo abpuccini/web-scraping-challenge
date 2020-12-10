@@ -18,7 +18,7 @@ Building a web application that scrapes various websites for data related to the
 
 ## Part I - Scraping data
 
-*Accompanied by Jupyter NoteBook* [Click here to view](https://nbviewer.jupyter.org/github/abpuccini/web-scraping-challenge/blob/main/mission_to_mars.ipynb) 
+*Accompanied by Jupyter NoteBook* [Click here to view](https://nbviewer.jupyter.org/github/abpuccini/web-scraping-challenge/blob/main/mission_to_mars/mission_to_mars.ipynb) 
 
 ### The lasted Mars news title and paragraph
 
